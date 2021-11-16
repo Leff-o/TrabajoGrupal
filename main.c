@@ -44,7 +44,12 @@ int main() {
                 printf("En la cadena digitada hay: %d  Vocales",aux);
                 break;
             case 4:
-                printf("Año nuevo");
+                printf("ingrese la hora ");
+                int enteroReal,h,m;
+                char dospuntos;
+                scanf("%d" "%c" "%d",&h,&dospuntos,&m);
+                printf("%d" "%c" "%d",h, dospuntos, m);
+
                 break;
             case 5:
                 printf("Llenar caracteres por izquierda o derecha");
