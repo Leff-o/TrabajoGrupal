@@ -1,11 +1,17 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
 int main() {
     char cadena[200];
+    char *p;
+    char *tok;
+    char *next_tok1;
     int op, cont;
 
     do {
-        printf("\n_____Menu_____\n1.Convertir en nombre Propio el contenido del a cadena.\n2.Contar el numero de veces que existe una palabra en una cadena.\n3.Enctriptar cadena.\n4.Desencriptar.\n5.Llenar caracteres por Izquierda o por derecha.\n6.Borrar caracteres de una cadena.\n7.Interseccion.\n8.Diferencia entre dos cadenas.\n9.Borrar caracteres Izquierda o Derecha.\n10.Validar correo electronico.\n11.Salir\n>>");
+        printf("\n_____Menu_____\n1.Convertir en nombre Propio el contenido del a cadena.\n2.Contar el numero de veces que existe una palabra en una cadena.\n3.Contar Vocales.\n4.Año nuevo.\n5.Llenar caracteres por Izquierda o por derecha.\n6.Borrar caracteres de una cadena.\n7.Interseccion.\n8.Eliminar repetidos.\n9.Borrar caracteres Izquierda o Derecha.\n10.Validar correo electronico.\n11.Salir\n>>");
         scanf("%d", &op);
 
         switch (op) {
@@ -16,7 +22,26 @@ int main() {
                 printf("Buscar y contar palabras en cadena");
                 break;
             case 3:
+
                 printf("Contar Vocales");
+                int vocales=0;
+                int aux=0;
+                printf("ingrese la cadena");
+                gets(cadena);
+                gets(cadena);
+
+                for (int indice = 0; cadena[indice]  != '\0'; indice++){
+
+                    // Así no importa si ponen 'A' o 'a', ambas letras serán convertidas a 'a'
+                    char letraActual = tolower(cadena[indice]);
+
+                    if (letraActual == 'a' ||letraActual == 'e' ||letraActual == 'i' ||letraActual == 'o' ||letraActual == 'u')
+                    {
+                      aux++;
+                    }
+
+                }
+                printf("En la cadena digitada hay: %d  Vocales",aux);
                 break;
             case 4:
                 printf("Año nuevo");
@@ -37,11 +62,13 @@ int main() {
                 printf("Contar palabras");
                 break;
             case 10:
-                printf("Validar correo");
+
                 break;
+
             case 11:
                 printf("BYE BYE");
                 break;
         }
     }while(op!=11);
-}
+    return 0;
+    }
