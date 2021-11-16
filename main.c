@@ -62,7 +62,38 @@ int main() {
                 printf("Contar palabras");
                 break;
             case 10:
+                //Validar correo electronico
 
+                printf("Ingrese su correo electronico\n>>");
+
+                gets(cadena);
+                gets(cadena);
+
+                for (int i = 0; i < 40; i++) {
+                    tok = strstr(cadena,"@");
+                    if (tok != NULL) {
+                        break;
+                    }
+                }
+                for (int i = 0; i < 40; i++) {
+                    next_tok1 = strstr(cadena,".");
+                    if (next_tok1 != NULL && &next_tok1 > &tok) {
+                        break;
+                    }
+                }
+                if (tok != NULL) {
+                    if (next_tok1 != 0 && &next_tok1 < &tok) {
+                        printf("Correo valido.");
+                    }
+                    else {
+                        printf("Su correo es invalido, por favor reviselo.");
+
+                    }
+                }
+                else {
+                    printf("Su correo es invalido, por favor reviselo.");
+
+                }
                 break;
 
             case 11:
