@@ -44,11 +44,23 @@ int main() {
                 printf("En la cadena digitada hay: %d  Vocales",aux);
                 break;
             case 4:
-                printf("ingrese la hora ");
-                int enteroReal,h,m;
+                printf("ingrese la hora\n");
+                int contReal=0,h=0,m=0,auxH=0;
                 char dospuntos;
                 scanf("%d" "%c" "%d",&h,&dospuntos,&m);
-                printf("%d" "%c" "%d",h, dospuntos, m);
+
+                //Condicional para "Cuenta regresiva"
+
+                if(h>24 || h<0 || m>60 || m<0){
+                    printf("La hora es erronea\n");
+                    break;
+                }if(h<=24 || m<=60){
+
+                    auxH=24-h;
+                  //  auxM=60-m;
+                    contReal= (auxH*60)-m;
+                }
+                printf("Para que sea  <new year>  faltan %d Minutos :D", contReal);
 
                 break;
             case 5:
