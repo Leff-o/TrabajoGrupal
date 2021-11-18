@@ -73,7 +73,20 @@ int main() {
                 printf("Intersección");
                 break;
             case 8:
-                printf("Eliminar repetidos");
+                printf("Ingrese la cadena de texto\n");
+                gets(cadena);
+                gets(cadena);
+                int i=0;
+                int j=0;
+                char resultado[30]="";
+                while(cadena[i])
+                {
+                    if(!strchr(resultado,cadena[i]))
+                        resultado[j++]=cadena[i];
+                    i++;
+                }
+                resultado[j]='\0';
+                printf("\nEl resultado seria!\n%s",resultado);
                 break;
             case 9:
                 printf("Contar palabras");
