@@ -66,12 +66,24 @@ int main() {
     int op, cont;
 
     do {
-        printf("\n_____Menu_____\n1.Convertir en nombre Propio el contenido del a cadena.\n2.Contar el numero de veces que existe una palabra en una cadena.\n3.Contar Vocales.\n4.Año nuevo.\n5.Llenar caracteres por Izquierda o por derecha.\n6.Borrar caracteres de una cadena.\n7.Interseccion.\n8.Eliminar repetidos.\n9.Borrar caracteres Izquierda o Derecha.\n10.Validar correo electronico.\n11.Salir\n>>");
+        printf("\n_____Menu_____\n1.Convertir en nombre Propio el contenido del a cadena.\n2.Contar el numero de veces que existe una palabra en una cadena.\n3.Contar Vocales.\n4.Año nuevo.\n5.Llenar caracteres por Izquierda o por derecha.\n6.Borrar caracteres de una cadena.\n7.Interseccion.\n8.Eliminar repetidos.\n9.Contar Palabras.\n10.Validar correo electronico.\n11.Salir\n>>");
         scanf("%d", &op);
 
         switch (op) {
             case 1:
-                printf("Convertir en nomre propio");
+
+                /*
+                * código de karen Avella
+                * */
+
+                printf("Cadena original: %s\n", cadena);
+                gets(cadena);
+                gets(cadena);
+
+                for (int indice = 0; cadena[indice] != '\0'; ++indice){
+                    cadena[indice] = toupper(cadena[indice]);
+                }
+                printf("Cadena despues de ser convertida: %s\n", cadena);
                 break;
             case 2:
                 printf("Buscar cadena de caracteres\n");
@@ -163,7 +175,21 @@ int main() {
                 printf("Despues de remover es: '%s'\n", cadena);
                 break;
             case 7:
-                printf("Intersección");
+                /*
+                    * código de karen Avella
+                    * */
+              /*  int i, a, index;
+                for (i = 1; i < array_size; i++) {
+                    index = cadena[i];
+                    a = i - 1;
+                    while (a >= 0 && cadena[a] > index) {
+                        cadena[a + 1] = cadena[a];
+                        a--;
+                    }
+                    cadena[a + 1] = index;
+                }
+
+            }*/
                 break;
             case 8:
                 printf("Ingrese la cadena de texto\n");
@@ -181,12 +207,35 @@ int main() {
                 resultado[j]='\0';
                 printf("\nEl resultado seria!\n%s",resultado);
                 break;
-            case 9:
-                printf("Contar palabras");
+            case 9:{
+                /*
+                 * código de karen Avella
+                 * */
+                printf("Ingrese texto");
+                gets(cadena);
+                gets(cadena);
+                int contador = 0;
+                int i = 0;
+                int largo = strlen(cadena);
+                int bolle =0;
+
+
+                for( i = 0; i < largo ; i++)
+                {
+
+                    if(cadena[i] == ' ' && cadena[i+1] != ' ')
+                    {
+
+                        contador ++;
+                    }
+
+
+                }
+
+                printf("la cantidad de palabras es %d \n", contador);
+            }
                 break;
             case 10:
-                //Validar correo electronico
-
                 printf("Ingrese su correo electronico\n>>");
 
                 gets(cadena);
