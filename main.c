@@ -5,8 +5,7 @@
 #include <ctype.h>
 
 int buscarCadena(char* cadena, char* buscar){
-    printf("%s", cadena);
-    printf("%s", buscar);
+
     int cont = 0;
     for(size_t i = 0; cadena [i] != '\0'; i++){
         int cont2 = 0;
@@ -23,25 +22,25 @@ int buscarCadena(char* cadena, char* buscar){
 }
 
 int borrarCaracteres(char* cadena, char* borrar){
-    int indiceCadena = 0, indiceCadenaLimpia = 0;
-    int deberiaAgregarCaracter = 1;
+    int iCadena = 0, iCadenaLimpia = 0;
+    int agregarCaracter = 1;
 
-    while (cadena[indiceCadena]){
-        deberiaAgregarCaracter = 1;
-        int indiceCaracteres = 0;
-        while(borrar[indiceCaracteres]){
-            if (cadena[indiceCadena] == borrar[indiceCaracteres]){
-                deberiaAgregarCaracter = 0;
+    while (cadena[iCadena]){
+        agregarCaracter = 1;
+        int iCaracteres = 0;
+        while(borrar[iCaracteres]){
+            if (cadena[iCadena] == borrar[iCaracteres]){
+                agregarCaracter = 0;
             }
-            indiceCaracteres++;
+            iCaracteres++;
         }
-        if(deberiaAgregarCaracter){
-            cadena[indiceCadenaLimpia] = cadena[indiceCadena];
-            indiceCadenaLimpia++;
+        if(agregarCaracter){
+            cadena[iCadenaLimpia] = cadena[iCadena];
+            iCadenaLimpia++;
         }
-        indiceCadena++;
+        iCadena++;
     }
-    cadena[indiceCadenaLimpia] = 0;
+    cadena[iCadenaLimpia] = 0;
 }
 void llenarCaracter(char cadena[], char caracter[], int cant, int op){
     if (op == 1){
