@@ -149,6 +149,7 @@ int main() {
                 char cadena[100];
                 char caracter[100];
                 int cant, op;
+
                 printf("Ingrese cadena\n");
                 scanf("%s", &cadena);
                 printf("Ingrese caracter \n");
