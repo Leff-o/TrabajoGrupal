@@ -43,20 +43,23 @@ int borrarCaracteres(char* cadena, char* borrar){
     }
     cadena[indiceCadenaLimpia] = 0;
 }
-int llenarCaracteres(char cadena[], char caracter[], int cant, int op){
+void llenarCaracter(char cadena[], char caracter[], int cant, int op){
     if (op == 1){
         for (int i = 0; i < cant; i++) {
             strcat(cadena,caracter);
         }
-        printf("cadena: %s\n", cadena);
+        printf("La cadena es: %s\n", cadena);
 
     }if (op == 2){
-        for (int i = 0; i < cant; i++) {
-            strcat(cadena,caracter);
+        char *relleno = caracter;
+        for (int i = 0; i < cant -1; i++) {
+            strcat(relleno, relleno);
         }
-        printf("cadena: %s\n", caracter);
+        strcat(relleno, cadena);
+        printf("Cadena con relleno: %s", relleno, cadena);
     }
 }
+
 //------------------------------------------------------------------------------------
 int main() {
     char cadena[200];
@@ -130,22 +133,20 @@ int main() {
                 break;
             case 5:
                 printf("Llenar caracteres por izquierda o derecha\n");
-                char llenar [200];
-                int opcion, cantidad;
 
-                fflush(stdin);
-                printf("ingrese la cadena: \n");
+                char cadena[100];
+                char caracter[100];
+                int cant, op;
+                printf("Ingrese cadena\n");
                 scanf("%s", &cadena);
-
-                printf("ingrese un caracter: \n");
-                scanf("%s", &llenar);
-                fflush(stdin);
-                printf("ingrese la cantidad de veces: \n");
-                scanf("%s", &cantidad);
-                fflush(stdin);
-                printf("1.) Izquierda\n2.) Derecha\n");
-                scanf("%d", &opcion);
-                llenarCaracteres(cadena, llenar, cantidad, opcion);
+                printf("Ingrese caracter \n");
+                scanf("%s", &caracter);
+                printf("Cantidad de veces a llenar\n");
+                scanf("%d", &cant);
+                printf("1. Derecha \n");
+                printf("2. Izquierda \n");
+                scanf("%d", &op);
+                llenarCaracter(cadena, caracter, cant, op);
 
                 break;
             case 6:
